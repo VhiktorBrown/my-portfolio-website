@@ -3,15 +3,15 @@ import 'package:flutter/material.dart';
 import '../utils/constants.dart';
 import 'animated_progress_indicator.dart';
 
-class Skills extends StatelessWidget {
-  const Skills({Key? key}) : super(key: key);
+class SkillsWidget extends StatelessWidget {
+  const SkillsWidget({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return const Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Divider(color: bodyTextColor,),
+        Divider(color: bodyTextColor,thickness: 0.2,),
         Padding(
           padding: EdgeInsets.symmetric(vertical: defaultPadding),
           child: Text(
