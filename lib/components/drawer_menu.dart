@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:victors_portfolio/components/my_information.dart';
+import 'package:victors_portfolio/components/skills_widget.dart';
 
 import '../utils/constants.dart';
+import 'animated_progress_indicator.dart';
 
 class DrawerMenu extends StatelessWidget {
   const DrawerMenu({Key? key}) : super(key: key);
@@ -17,22 +19,23 @@ class DrawerMenu extends StatelessWidget {
             child: SingleChildScrollView(
               padding: EdgeInsets.all(defaultPadding),
               child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   InfoTextSubTitle(title: "Country", text: "Nigeria",),
                   InfoTextSubTitle(title: "City", text: "Lagos",),
                   InfoTextSubTitle(title: "Phone", text: "08167945270",),
                   InfoTextSubTitle(title: "Email", text: "theelitedevelopers1",),
-                  Divider(color: bodyTextColor,),
-                  Padding(
-                    padding: EdgeInsets.symmetric(vertical: defaultPadding),
-                    child: Text(
-                      "Skills",
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontWeight: FontWeight.w400,
+                  Skills(),
+                  Column(
+                    children: [
+                      Divider(),
+                      Text(
+                        "Coding",
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontWeight: FontWeight.w400,
+                        ),
                       ),
-                    ),
+                    ],
                   )
                 ],
               ),
@@ -43,6 +46,8 @@ class DrawerMenu extends StatelessWidget {
     );
   }
 }
+
+
 
 class InfoTextSubTitle extends StatelessWidget {
   const InfoTextSubTitle({

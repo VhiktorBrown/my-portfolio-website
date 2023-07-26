@@ -18,7 +18,7 @@ class MyInformation extends StatelessWidget {
             Spacer(flex: 2,),
             CircleAvatar(
                 radius: 50,
-                backgroundColor: bgColor,
+                backgroundColor: Colors.white24,
                 backgroundImage: AssetImage('assets/images/victor_profile_image.png')
             ),
             Spacer(),
@@ -32,8 +32,9 @@ class MyInformation extends StatelessWidget {
               'Android & Flutter developer. Co-founder of iQuest.',
               textAlign: TextAlign.center,
               style: TextStyle(
-                  fontWeight: FontWeight.w200,
+                  fontWeight: FontWeight.w100,
                   height: 1.5,
+                  fontSize: 14,
                   color: bodyTextColor
               ),
             ),
