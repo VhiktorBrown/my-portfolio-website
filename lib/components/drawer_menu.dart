@@ -1,5 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:icons_flutter/icons_flutter.dart';
+import 'package:victors_portfolio/components/knowledge_widget.dart';
 import 'package:victors_portfolio/components/my_information.dart';
 import 'package:victors_portfolio/components/skills_widget.dart';
 import 'package:victors_portfolio/components/coding_widget.dart';
@@ -10,34 +12,88 @@ class DrawerMenu extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Drawer(
+    return Drawer(
       backgroundColor: bgColor,
       child: Column(
         children: [
-          MyInformation(),
+          const MyInformation(),
           Expanded(
             child: SingleChildScrollView(
-              padding: EdgeInsets.all(defaultPadding),
+              padding: const EdgeInsets.all(defaultPadding),
               child: Column(
                 children: [
-                  InfoTextSubTitle(title: "Country", text: "Nigeria",),
-                  InfoTextSubTitle(title: "City", text: "Lagos",),
-                  InfoTextSubTitle(title: "Phone", text: "08167945270",),
-                  InfoTextSubTitle(title: "Email", text: "theelitedevelopers1",),
-                  SkillsWidget(),
-                  SizedBox(height: defaultPadding),
-                  CodingWidget(),
+                  const InfoTextSubTitle(title: "Country", text: "Nigeria",),
+                  const InfoTextSubTitle(title: "City", text: "Lagos",),
+                  const InfoTextSubTitle(title: "Phone", text: "08167945270",),
+                  const InfoTextSubTitle(title: "Email", text: "theelitedevelopers1",),
+                  const SkillsWidget(),
+                  const SizedBox(height: defaultPadding),
+                  const CodingWidget(),
+                  SizedBox(height: defaultPadding,),
+                  KnowledgeWidget(),
+                  SizedBox(height: defaultPadding,),
                   Divider(color: bodyTextColor,thickness: 0.2,),
-                  Padding(
-                    padding: EdgeInsets.symmetric(vertical: defaultPadding),
-                    child: Text(
-                      "Knowledge",
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontWeight: FontWeight.w400,
-                      ),
-                    ),
+                  SizedBox(height: defaultPadding/2,),
+                  TextButton(
+                      onPressed: (){},
+                      child: FittedBox(
+                        child: Row(
+                          children: [
+                            Text(
+                              "DOWNLOAD CV",
+                              style: const TextStyle(
+                                color: bodyTextColor,
+                                fontWeight: FontWeight.w400,
+                              ),
+                            ),
+                            SizedBox(width: defaultPadding / 2,),
+                            Icon(
+                              AntDesign.download,
+                              color: bodyTextColor,
+                              size: 16,
+                            )
+                          ],
+                        ),
+                      )
                   ),
+                  Container(
+                    margin: EdgeInsets.only(top: defaultPadding / 2),
+                    color: Color(0XFF24242E),
+                    child: Row(
+                      children: [
+                        Spacer(),
+                        IconButton(
+                            onPressed: (){},
+                            icon: Icon(
+                              AntDesign.linkedin_square,
+                              color: bodyTextColor,
+                            )
+                        ),
+                        IconButton(
+                            onPressed: (){},
+                            icon: Icon(
+                              AntDesign.github,
+                              color: bodyTextColor,
+                            )
+                        ),
+                        IconButton(
+                            onPressed: (){},
+                            icon: Icon(
+                              AntDesign.twitter,
+                              color: bodyTextColor,
+                            )
+                        ),
+                        IconButton(
+                            onPressed: (){},
+                            icon: Icon(
+                              AntDesign.medium_wordmark,
+                              color: bodyTextColor,
+                            )
+                        ),
+                        Spacer(),
+                      ],
+                    ),
+                  )
                 ],
               ),
             ),
