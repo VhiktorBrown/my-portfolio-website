@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../utils/constants.dart';
-import 'animated_progress_indicator.dart';
+import 'animated_circular_progress_indicator.dart';
 
 class SkillsWidget extends StatelessWidget {
   const SkillsWidget({Key? key}) : super(key: key);
@@ -25,19 +25,19 @@ class SkillsWidget extends StatelessWidget {
         Row(
           children: [
             Expanded(
-              child: AnimatedProgressIndicator(
+              child: AnimatedCircularProgressIndicator(
                   percentage: 0.8,
                   label: "Flutter"),
             ),
             SizedBox(width: defaultPadding,),
             Expanded(
-              child: AnimatedProgressIndicator(
+              child: AnimatedCircularProgressIndicator(
                   percentage: 0.88,
                   label: "Java & Kotlin"),
             ),
             SizedBox(width: defaultPadding,),
             Expanded(
-              child: AnimatedProgressIndicator(
+              child: AnimatedCircularProgressIndicator(
                   percentage: 0.90,
                   label: "Firebase"),
             ),

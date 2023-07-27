@@ -2,17 +2,15 @@ import 'package:flutter/material.dart';
 
 import '../utils/constants.dart';
 
-class LinearProIndicator extends StatelessWidget {
-  const LinearProIndicator({
+class AnimatedLinearProgressIndicator extends StatelessWidget {
+  const AnimatedLinearProgressIndicator({
     Key? key,
     required this.percentage,
     required this.title,
-    required this.percentLabel,
   }) : super(key: key);
 
   final double percentage;
   final String title;
-  final String percentLabel;
 
   @override
   Widget build(BuildContext context) {
@@ -32,7 +30,7 @@ class LinearProIndicator extends StatelessWidget {
                   ),
                 ),
                 Text(
-                  percentLabel,
+                  "${(value * 100).toInt()}%",
                   style: const TextStyle(
                     color: bodyTextColor,
                     fontWeight: FontWeight.w400,
