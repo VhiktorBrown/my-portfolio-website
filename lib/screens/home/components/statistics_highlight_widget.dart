@@ -76,7 +76,7 @@ class AnimatedCounter extends StatelessWidget {
       builder: (context, value, child) => Text(
         "$value$text",
         style: const TextStyle(
-            color: primaryColor,
+            color: darkColor,
             fontSize: 14
         ),
       ),

@@ -14,7 +14,7 @@ class HeaderBanner extends StatelessWidget {
         fit: StackFit.expand,
         children: [
           Image.asset('assets/images/bg_image.jpg', fit: BoxFit.cover,),
-          Container(color: darkColor.withOpacity(0.66),),
+          Container(color: secondaryColor.withOpacity(0.2),),
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: defaultPadding),
             child: Column(
@@ -45,7 +45,7 @@ class HeaderBanner extends StatelessWidget {
                     child: Text(
                       "EXPLORE NOW",
                       style: GoogleFonts.poppins(
-                          color: darkColor,
+                          color: Color(0XFFFFFFFF),
                           fontWeight: FontWeight.w600
                       ),
                     )
@@ -101,7 +101,7 @@ class TaggedTextWidget extends StatelessWidget {
             children: [
               TextSpan(
                   text: text,
-                  style: const TextStyle(color: primaryColor)
+                  style: const TextStyle(color: darkColor)
               ),
               const TextSpan(text: ">", style: TextStyle(color: Colors.white),),
             ]

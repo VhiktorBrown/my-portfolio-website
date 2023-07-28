@@ -28,7 +28,7 @@ class MyProjectsWidget extends StatelessWidget {
                 crossAxisCount: 3,
                 crossAxisSpacing: defaultPadding,
                 mainAxisSpacing: defaultPadding,
-                childAspectRatio: 1.1
+                childAspectRatio: 1.23
             ),
             itemBuilder: (context, index){
               return ProjectCard(project: demoProjects[index]);
@@ -83,7 +83,7 @@ class ProjectCard extends StatelessWidget {
               )
             ],
           ),
-          const SizedBox(height: defaultPadding/3,),
+          const SizedBox(height: defaultPadding,),
           Text(
             project.description!,
             maxLines: 4,
@@ -101,7 +101,7 @@ class ProjectCard extends StatelessWidget {
               "Read More >>",
               textAlign: TextAlign.start,
               style: GoogleFonts.poppins(
-                color: primaryColor,
+                color: darkColor,
               ),
             ),
           ),

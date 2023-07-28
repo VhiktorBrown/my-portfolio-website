@@ -11,7 +11,7 @@ class MyInformation extends StatelessWidget {
       aspectRatio: 1.23,
       child: Container(
         padding: EdgeInsets.symmetric(horizontal: 30.0),
-        color: const Color(0XFF242430),
+        color: secondaryColor,
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
@@ -29,12 +29,12 @@ class MyInformation extends StatelessWidget {
               ),
             ),
             Text(
-              'Android & Flutter developer. Co-founder of iQuest.',
+              'Android & Flutter developer.',
               textAlign: TextAlign.center,
               style: TextStyle(
                   fontWeight: FontWeight.w100,
                   height: 1.5,
-                  fontSize: 14,
+                  fontSize: 12,
                   color: bodyTextColor
               ),
             ),

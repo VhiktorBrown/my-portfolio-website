@@ -5,7 +5,7 @@ class Project {
 
 List<Project> demoProjects = [
   Project(
-      title: "iQuest - Ed-Tech for Undergraduates",
+      title: "iQuest App - Ed-Tech for Undergraduates",
       description: "iQuest is an Ed-Tech mobile app that is bringing thousands of undergraduate students closer to their academic goals. "
           "I was part of small mobile team responsible for setting up the project structure, building its user interface and writing readable, efficient, scalable code "
           "as well as shipping to the app store.",
@@ -13,7 +13,7 @@ List<Project> demoProjects = [
       iconPath: "assets/icons/google_play.svg",
   ),
   Project(
-      title: "Syticks - The Social Ticketing Platform",
+      title: "Syticks App - The Social Ticketing Platform",
       description: "Responsible for building from scratch the app that's gradually digitalizing the traditional ticketing industry, I was responsible for "
           "setting up project using MVVM structure, building UI, writing optimal Java and Kotlin code, implementing dependency injection with Dagger2, writing tests and "
           "shipping apps to the store.",

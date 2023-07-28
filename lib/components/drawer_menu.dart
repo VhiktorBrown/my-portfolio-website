@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:icons_flutter/icons_flutter.dart';
 import 'package:victors_portfolio/components/knowledge_widget.dart';
@@ -59,7 +58,7 @@ class DrawerMenu extends StatelessWidget {
                   ),
                   Container(
                     margin: EdgeInsets.only(top: defaultPadding / 2),
-                    color: Color(0XFF24242E),
+                    color: secondaryColor,
                     child: Row(
                       children: [
                         Spacer(),
