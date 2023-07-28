@@ -28,7 +28,7 @@ class MyProjectsWidget extends StatelessWidget {
                 crossAxisCount: 3,
                 crossAxisSpacing: defaultPadding,
                 mainAxisSpacing: defaultPadding,
-                childAspectRatio: 1.2
+                childAspectRatio: 1.1
             ),
             itemBuilder: (context, index){
               return ProjectCard(project: demoProjects[index]);

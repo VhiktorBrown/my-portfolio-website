@@ -14,6 +14,7 @@ class DrawerMenu extends StatelessWidget {
   Widget build(BuildContext context) {
     return Drawer(
       backgroundColor: bgColor,
+      surfaceTintColor: bgColor,
       child: Column(
         children: [
           const MyInformation(),
