@@ -24,8 +24,12 @@ class KnowledgeWidget extends StatelessWidget {
         ),
         KnowledgeItem(text: "Flutter, Dart"),
         KnowledgeItem(text: "Android SDK, Java, Kotlin"),
+        KnowledgeItem(text: "State Management - Provider, Bloc, GetX"),
+        KnowledgeItem(text: "Dagger2, DaggerHilt, MVVM"),
+        KnowledgeItem(text: "Jetpack Libraries, Android Lifecycle"),
+        KnowledgeItem(text: "SQL, Firebase services"),
         KnowledgeItem(text: "REST API services"),
-        KnowledgeItem(text: "SQL, Firebase services")
+        KnowledgeItem(text: "OneSignal Push Notification & FCM"),
       ],
     );
   }
