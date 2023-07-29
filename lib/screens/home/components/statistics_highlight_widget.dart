@@ -1,15 +1,48 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
+import '../../../responsive.dart';
 import '../../../utils/constants.dart';
 class StatisticsHighlightWidget extends StatelessWidget {
   const StatisticsHighlightWidget({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return const Padding(
-      padding: EdgeInsets.symmetric(vertical: defaultPadding),
-      child: Row(
+    return Padding(
+      padding: const EdgeInsets.symmetric(vertical: defaultPadding),
+      child: Responsive.isMobileLarge(context) ?
+      const Column(
+        children: [
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              StatisticsHighlightItem(
+                animatedCounter: AnimatedCounter(value: 1000, text: "+"),
+                label: "Followers",
+              ),
+              StatisticsHighlightItem(
+                animatedCounter: AnimatedCounter(value: 5, text: "",),
+                label: "Live Projects",
+              ),
+            ],
+          ),
+          SizedBox(height: defaultPadding,),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              StatisticsHighlightItem(
+                animatedCounter: AnimatedCounter(value: 40, text: "+"),
+                label: "Github projects",
+              ),
+              StatisticsHighlightItem(
+                animatedCounter: AnimatedCounter(value: 51, text: "+"),
+                label: "Stars earned",
+              ),
+            ],
+          )
+        ],
+      ) : Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           StatisticsHighlightItem(

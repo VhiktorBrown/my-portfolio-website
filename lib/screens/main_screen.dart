@@ -14,14 +14,19 @@ class MainScreen extends StatelessWidget {
     return Scaffold(
       appBar: Responsive.isDesktop(context) ? null : AppBar(
         backgroundColor: bgColor,
-        leading: IconButton(
-          onPressed: (){
-          },
-          icon: const Icon(
-            Icons.menu,
-          ),
-        ),
+        leading: Builder(
+          builder: (context) =>
+            IconButton(
+              onPressed: (){
+                Scaffold.of(context).openDrawer();
+              },
+              icon: const Icon(
+                Icons.menu,
+              ),
+            ),
+        )
       ),
+      drawer: const DrawerMenu(),
       body: Container(
         constraints: const BoxConstraints(maxWidth: maxWidth),
         child: Row(

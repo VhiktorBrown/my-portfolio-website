@@ -2,6 +2,7 @@ import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
+import '../../../responsive.dart';
 import '../../../utils/constants.dart';
 class HeaderBanner extends StatelessWidget {
   const HeaderBanner({Key? key}) : super(key: key);
@@ -21,35 +22,42 @@ class HeaderBanner extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                const Text(
+                Text(
                   "The only real limitations we have are\nthe ones we lay in our minds.",
-                  style: TextStyle(
+                  style: Responsive.isDesktop(context) ? TextStyle(
                       color: Colors.white,
                       fontSize: 32,
                       fontWeight: FontWeight.bold
+                  ) : TextStyle(
+                      color: Colors.white,
+                      fontSize: 20,
+                      fontWeight: FontWeight.bold
                   ),
                 ),
+                if(Responsive.isMobileLarge(context))
+                  const SizedBox(height: defaultPadding/2,),
                 const IBuildAnimatedTextWidget(),
                 const SizedBox(height: defaultPadding,),
-                ElevatedButton(
-                    onPressed: (){},
-                    style: TextButton.styleFrom(
-                      padding: const EdgeInsets.symmetric(
-                          horizontal: defaultPadding * 2,
-                          vertical: defaultPadding),
-                      backgroundColor: primaryColor,
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(5), // Adjust the value to control corner radius
+                if(!Responsive.isMobileLarge(context))
+                  ElevatedButton(
+                      onPressed: (){},
+                      style: TextButton.styleFrom(
+                        padding: const EdgeInsets.symmetric(
+                            horizontal: defaultPadding * 2,
+                            vertical: defaultPadding),
+                        backgroundColor: primaryColor,
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(5), // Adjust the value to control corner radius
+                        ),
                       ),
-                    ),
-                    child: Text(
-                      "EXPLORE NOW",
-                      style: GoogleFonts.poppins(
-                          color: Color(0XFFFFFFFF),
-                          fontWeight: FontWeight.w600
-                      ),
-                    )
-                )
+                      child: Text(
+                        "EXPLORE NOW",
+                        style: GoogleFonts.poppins(
+                            color: const Color(0XFFFFFFFF),
+                            fontWeight: FontWeight.w600
+                        ),
+                      )
+                  )
               ],
             ),
           )
@@ -66,13 +74,15 @@ class IBuildAnimatedTextWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return DefaultTextStyle(
         style: GoogleFonts.poppins(
-          fontSize: 16,
+          fontSize: !Responsive.isMobileLarge(context) ? 16 : 12,
           color: Colors.white,
         ),
         child: Row(
           children: [
-            const TaggedTextWidget(text: "Android"),
-            const SizedBox(width: defaultPadding / 2,),
+            if(!Responsive.isMobileLarge(context))
+              const TaggedTextWidget(text: "Android"),
+            if(!Responsive.isMobileLarge(context))
+              const SizedBox(width: defaultPadding / 2,),
             const Text("I build "),
             AnimatedTextKit(
                 animatedTexts: [
@@ -81,7 +91,8 @@ class IBuildAnimatedTextWidget extends StatelessWidget {
                 ]
             ),
             const SizedBox(width: defaultPadding / 2,),
-            const TaggedTextWidget(text: "iOS"),
+            if(!Responsive.isMobileLarge(context))
+              const TaggedTextWidget(text: "iOS"),
           ],
         )
     );
