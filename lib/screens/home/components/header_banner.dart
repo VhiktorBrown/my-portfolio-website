@@ -1,6 +1,7 @@
 import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 import '../../../responsive.dart';
 import '../../../utils/constants.dart';
@@ -40,7 +41,9 @@ class HeaderBanner extends StatelessWidget {
                 const SizedBox(height: defaultPadding,),
                 if(!Responsive.isMobileLarge(context))
                   ElevatedButton(
-                      onPressed: (){},
+                      onPressed: () async{
+                        await launchUrl(Uri.parse("https://github.com/VhiktorBrown"));
+                      },
                       style: TextButton.styleFrom(
                         padding: const EdgeInsets.symmetric(
                             horizontal: defaultPadding * 2,

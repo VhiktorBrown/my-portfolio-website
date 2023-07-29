@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:url_launcher/url_launcher.dart';
 import '../../../models/recommendation.dart';
 import '../../../utils/constants.dart';
 
@@ -48,38 +49,46 @@ class RecommendationCard extends StatelessWidget {
   final Recommendation recommendation;
   @override
   Widget build(BuildContext context) {
-    return Container(
-      width: 400,
-      padding: const EdgeInsets.all(defaultPadding),
-      color: secondaryColor,
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Text(
-            recommendation.name!,
-            style: GoogleFonts.poppins(
-              color: Colors.white,
-            ),
+    return MouseRegion(
+      cursor: SystemMouseCursors.click,
+      child: GestureDetector(
+        onTap: () async{
+          await launchUrl(Uri.parse(recommendation.link!));
+        },
+        child: Container(
+          width: 400,
+          padding: const EdgeInsets.all(defaultPadding),
+          color: secondaryColor,
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(
+                recommendation.name!,
+                style: GoogleFonts.poppins(
+                  color: Colors.white,
+                ),
+              ),
+              const SizedBox(height: defaultPadding/2,),
+              Text(
+                recommendation.position!,
+                style: GoogleFonts.poppins(
+                  color: bodyTextColor,
+                  fontSize: 12,
+                ),
+              ),
+              const SizedBox(height: defaultPadding/2,),
+              Text(
+                recommendation.text!,
+                maxLines: 9,
+                overflow: TextOverflow.ellipsis,
+                style: GoogleFonts.poppins(
+                  color: bodyTextColor,
+                  height: 1.5,
+                ),
+              )
+            ],
           ),
-          const SizedBox(height: defaultPadding/2,),
-          Text(
-            recommendation.position!,
-            style: GoogleFonts.poppins(
-              color: bodyTextColor,
-              fontSize: 12,
-            ),
-          ),
-          const SizedBox(height: defaultPadding/2,),
-          Text(
-            recommendation.text!,
-            maxLines: 4,
-            overflow: TextOverflow.ellipsis,
-            style: GoogleFonts.poppins(
-              color: bodyTextColor,
-              height: 1.5,
-            ),
-          )
-        ],
+        ),
       ),
     );
   }

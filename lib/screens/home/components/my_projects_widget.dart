@@ -4,7 +4,6 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:icons_flutter/icons_flutter.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:victors_portfolio/responsive.dart';
-
 import '../../../models/project.dart';
 import '../../../utils/constants.dart';
 class MyProjectsWidget extends StatelessWidget {
