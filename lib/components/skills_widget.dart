@@ -33,7 +33,7 @@ class SkillsWidget extends StatelessWidget {
             Expanded(
               child: AnimatedCircularProgressIndicator(
                   percentage: 0.88,
-                  label: "Java & Kotlin"),
+                  label: "Native Android"),
             ),
             SizedBox(width: defaultPadding,),
             Expanded(

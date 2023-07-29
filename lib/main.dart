@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:sizer/sizer.dart';
 import 'package:victors_portfolio/screens/home/home_screen.dart';
 import 'package:victors_portfolio/utils/constants.dart';
 
@@ -16,11 +17,11 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Victor\'s Portfolio',
       theme: ThemeData.dark().copyWith(
-        useMaterial3: true,
-        primaryColor: primaryColor,
-        scaffoldBackgroundColor: bgColor,
-        canvasColor: bgColor,
-        textTheme: GoogleFonts.poppinsTextTheme()
+          useMaterial3: true,
+          primaryColor: primaryColor,
+          scaffoldBackgroundColor: bgColor,
+          canvasColor: bgColor,
+          textTheme: GoogleFonts.poppinsTextTheme()
         // textTheme: GoogleFonts.poppinsTextTheme(Theme.of(context).textTheme)
         //   .apply(bodyColor: Colors.white)
         //   .copyWith(
@@ -30,5 +31,27 @@ class MyApp extends StatelessWidget {
       ),
       home: const HomeScreen(),
     );
+    // return Sizer(
+    //     builder: (context, orientation, deviceType) {
+    //       return MaterialApp(
+    //         debugShowCheckedModeBanner: false,
+    //         title: 'Victor\'s Portfolio',
+    //         theme: ThemeData.dark().copyWith(
+    //             useMaterial3: true,
+    //             primaryColor: primaryColor,
+    //             scaffoldBackgroundColor: bgColor,
+    //             canvasColor: bgColor,
+    //             textTheme: GoogleFonts.poppinsTextTheme()
+    //           // textTheme: GoogleFonts.poppinsTextTheme(Theme.of(context).textTheme)
+    //           //   .apply(bodyColor: Colors.white)
+    //           //   .copyWith(
+    //           //   bodyText1: TextStyle(color: bodyTextColor),
+    //           //   bodyText2: TextStyle()
+    //           // )
+    //         ),
+    //         home: const HomeScreen(),
+    //       );
+    //     }
+    // );
   }
 }

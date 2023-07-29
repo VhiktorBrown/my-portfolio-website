@@ -15,7 +15,7 @@ class KnowledgeWidget extends StatelessWidget {
         Padding(
           padding: EdgeInsets.symmetric(vertical: defaultPadding),
           child: Text(
-            "Knowledge",
+            "Expertise",
             style: TextStyle(
               color: Colors.white,
               fontWeight: FontWeight.w400,

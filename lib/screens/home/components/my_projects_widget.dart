@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:icons_flutter/icons_flutter.dart';
+import 'package:url_launcher/url_launcher.dart';
 import 'package:victors_portfolio/responsive.dart';
 
 import '../../../models/project.dart';
@@ -22,9 +23,9 @@ class MyProjectsWidget extends StatelessWidget {
         ),
         const SizedBox(height: defaultPadding,),
         Responsive(
-            mobile: ProjectsGridView(crossAxisCount: 1, aspectRatio: 2.2,),
+            mobile: ProjectsGridView(crossAxisCount: 1, aspectRatio: 1.5,),
             mobileLarge: ProjectsGridView(crossAxisCount: 2, aspectRatio: 1.1,),
-            tablet: ProjectsGridView(aspectRatio: 1,),
+            tablet: ProjectsGridView(aspectRatio: 0.95,),
             desktop: ProjectsGridView()
         )
       ],
@@ -37,7 +38,7 @@ class ProjectsGridView extends StatelessWidget {
   const ProjectsGridView({
     Key? key,
     this.crossAxisCount = 3,
-    this.aspectRatio = 1.2
+    this.aspectRatio = 1.1
   }) : super(key: key);
 
   final int? crossAxisCount;
@@ -72,6 +73,7 @@ class ProjectCard extends StatelessWidget {
       color: secondaryColor,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
+        mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -90,17 +92,24 @@ class ProjectCard extends StatelessWidget {
                   onPressed: (){},
                   icon: project.iconPath == "" ?
                   IconButton(
-                      onPressed: (){},
+                      onPressed: () async {
+                       await launchUrl(Uri.parse(project.link!));
+                      },
                       icon: const Icon(
                         AntDesign.github,
                         color: darkColor,
                         size: 24,
                       )
                   ) :
-                  SvgPicture.asset(project.iconPath!,
-                    colorFilter: const ColorFilter.mode(darkColor, BlendMode.srcIn),
-                    width: 24,
-                    height: 24,
+                  GestureDetector(
+                    onTap: () async{
+                      await launchUrl(Uri.parse(project.link!));
+                    },
+                    child: SvgPicture.asset(project.iconPath!,
+                      colorFilter: const ColorFilter.mode(darkColor, BlendMode.srcIn),
+                      width: 24,
+                      height: 24,
+                    ),
                   )
               )
             ],
@@ -118,7 +127,9 @@ class ProjectCard extends StatelessWidget {
           ),
           const Spacer(),
           TextButton(
-            onPressed: (){},
+            onPressed: () async {
+              await launchUrl(Uri.parse(project.link!));
+            },
             child: Text(
               "Read More >>",
               textAlign: TextAlign.start,
