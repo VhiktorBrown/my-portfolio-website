@@ -1,6 +1,6 @@
 # victors_portfolio
 
-My Portfolio website buuiult with Flutter
+My Portfolio website built with Flutter
 
 ## Getting Started
 
