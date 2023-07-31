@@ -25,7 +25,7 @@ class DrawerMenu extends StatelessWidget {
                 children: [
                   const InfoTextSubTitle(title: "Country", text: "Nigeria",),
                   const InfoTextSubTitle(title: "City", text: "Anambra",),
-                  const InfoTextSubTitle(title: "Phone", text: "Text Me", clickable: true,),
+                  const InfoTextSubTitle(title: "Phone", text: "Reach out", clickable: true,),
                   const InfoTextSubTitle(title: "Email", text: "Email Me", clickable: true,),
                   const SkillsWidget(),
                   const SizedBox(height: defaultPadding),
@@ -39,12 +39,12 @@ class DrawerMenu extends StatelessWidget {
                       onPressed: () async{
                         await launchUrl(Uri.parse("https://docs.google.com/document/d/1sokexZHdS5tafKX3qKII4l366Mc6In99rR57T7DpggQ/edit?usp=drivesdk"));
                       },
-                      child: FittedBox(
+                      child: const FittedBox(
                         child: Row(
                           children: [
                             Text(
                               "VIEW RESUME",
-                              style: const TextStyle(
+                              style: TextStyle(
                                 color: bodyTextColor,
                                 fontWeight: FontWeight.w400,
                               ),

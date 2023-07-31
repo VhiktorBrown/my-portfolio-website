@@ -69,7 +69,10 @@ class ProjectCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       padding: const EdgeInsets.all(defaultPadding),
-      color: secondaryColor,
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(8),
+        color: secondaryColor,
+      ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         mainAxisAlignment: MainAxisAlignment.center,

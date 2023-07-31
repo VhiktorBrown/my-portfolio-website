@@ -1,4 +1,4 @@
-# victors_portfolio
+# Victor's Portfolio
 
 My Portfolio website built with Flutter
 
